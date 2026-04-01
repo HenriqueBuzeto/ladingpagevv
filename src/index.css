@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 84% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 84% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  /* Professional typography scale */
+  .text-hero {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  
+  .text-hero-sub {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium shadows */
+@layer utilities {
+  .shadow-premium {
+    box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.15), 
+                0 8px 24px -8px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-premium-lg {
+    box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.2),
+                0 16px 40px -12px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-premium-xl {
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.25),
+                0 20px 50px -15px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-elevated {
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-elevated:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.25),
+                0 16px 40px -12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Gradient text */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-3 {
+    border-width: 3px;
+  }
+  
+  .bg-red-primary {
+    background-color: #DC2626;
+  }
+  
+  .text-red-primary {
+    color: #DC2626;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced backdrop blur */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Letter spacing utility */
+.letter-spacing-wide {
+  letter-spacing: 0.2em;
+}
+
+/* Sharp corners for modern look */
+.rounded-none {
+  border-radius: 0;
+}
+
+/* Hero background responsive fix */
+.hero-bg {
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;
+  }
+}
