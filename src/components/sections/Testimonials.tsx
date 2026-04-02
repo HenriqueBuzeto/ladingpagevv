@@ -57,7 +57,7 @@ const Testimonials = () => {
                 <CardContent className="p-4 sm:p-5 lg:p-6">
                   <Quote className="h-7 w-7 sm:h-8 sm:w-8 text-red-400 mb-3 sm:mb-4 opacity-60" />
                   <p className="text-white/90 mb-4 leading-relaxed text-sm sm:text-[15px] font-medium">
-                    "{testimonial.text}"
+                    {testimonial.text}
                   </p>
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (

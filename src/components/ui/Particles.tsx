@@ -122,7 +122,7 @@ export default function Particles({
       window.removeEventListener("resize", onResize)
       window.cancelAnimationFrame(raf)
     }
-  }, [color, density, opacity, speed])
+  }, [color, density, dots, linkDistance, linkOpacity, links, opacity, speed])
 
   return (
     <canvas
