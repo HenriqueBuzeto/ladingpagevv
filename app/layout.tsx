@@ -51,7 +51,12 @@ export const metadata: Metadata = {
       "Construção e reforma com qualidade e prazo. Orçamento rápido via WhatsApp. Atendimento em Colina e região.",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      {
+        url: "/img/logo.png",
+        type: "image/png",
+      },
+    ],
   },
 }
 
